@@ -1,11 +1,12 @@
 import React from 'react';
 import CardList from './CardList'
-import {robots} from './robots'
+import {burgers} from './burgers'
 
 const App = () => {
     return (
-        <div> 
-            <CardList robots = {robots}/>
+        <div className="bg-washed-yellow"> 
+            <h1> My BurgerFriends </h1>
+            <CardList burgers = {burgers}/> 
         </div>
     )
 }
