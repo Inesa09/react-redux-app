@@ -1,0 +1,16 @@
+body{
+    background-color: silver
+}
+
+h1 {
+    font-family: 'Monoton';
+    font-weight: 1;
+    font-size: 100px;
+    letter-spacing: 15px;
+    color: darkslategrey;
+}
+
+@font-face {
+    font-family: 'Monoton';
+    src: url('https://fonts.googleapis.com/css?family=Monoton'); /* IE9 Compat Modes */
+}
