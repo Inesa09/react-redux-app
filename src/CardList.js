@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({burgers}) => {
+const CardList = ({ burgers }) => {
     return (
         <div> {
             burgers.map(burger => {
