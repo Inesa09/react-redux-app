@@ -1,45 +1,51 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import CardList from '../components/CardList'
 import SearchBox from '../components/SearchBox'
 import Scroll from '../components/Scroll'
+import ErrorBoundary from '../components/ErrorBoundary'
 import './App.css'
 
-class App extends Component {
-    constructor(){
-        super();
-        this.state = {
-            burgers: [],
-            searchField: ''
-        }
-    }
+import { setSearchField, requestBurgers } from '../actions';
 
-    onSearchChange = (event) => {
-        this.setState({searchField: event.target.value});
-    }
+const mapStateToProps = state => ({
+    searchField: state.searchBurgers.searchField, //state.searchField - if 1 reducer
+    burgers: state.requestBurgers.burgers,
+    isPending: state.requestBurgers.isPending,
+    error: state.requestBurgers.error,
+})
+
+const mapDispatchToProps = dispatch => ({
+    onSearchChange: event => dispatch(setSearchField(event.target.value)),
+    onRequestBurgers: () => dispatch(requestBurgers())
+})
+
+class App extends Component {
 
     componentDidMount(){
-        fetch('http://localhost:3004/burgers')
-        .then(response => response.json())
-        .then(response => this.setState({burgers: response}));
+        this.props.onRequestBurgers();
     }
 
     render(){
-        const {burgers, searchField} = this.state;
+        const { searchField, burgers, isPending, onSearchChange } = this.props;
         const filteredBurgers = burgers.filter(burger => burger.name.toLowerCase().includes(searchField.toLowerCase()));
-        return (!burgers.length) ?
+
+        return (isPending) ?
             <h1 className="tc"> Loading </h1> :
             (
                 <div className="tc">
                     <Scroll>
                         <h1 className="ma0 pa4"> Our  Burgers </h1>
-                        <SearchBox searchChange = {this.onSearchChange}/>
+                        <SearchBox searchChange = {onSearchChange}/>
                     </Scroll>
-                    <CardList burgers = {filteredBurgers}/>
+                    <ErrorBoundary>
+                        <CardList burgers = {filteredBurgers}/>
+                    </ErrorBoundary>
                 </div>
             )
     }   
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 // json-server --watch db.json --port 3004
