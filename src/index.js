@@ -9,8 +9,8 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import 'tachyons';
 
-import App from './containers/App';
-import { searchBurgers, requestBurgers } from './reducers';
+import App from './App';
+import { searchBurgers, requestBurgers } from './Menu/reducers';
 
 const logger = createLogger();
 const rootReducer = combineReducers({ searchBurgers, requestBurgers });

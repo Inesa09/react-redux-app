@@ -4,7 +4,7 @@ import CardList from '../components/CardList'
 import SearchBox from '../components/SearchBox'
 import Scroll from '../components/Scroll'
 import ErrorBoundary from '../components/ErrorBoundary'
-import './App.css'
+import './Menu.css'
 
 import { setSearchField, requestBurgers } from '../actions';
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     onRequestBurgers: () => dispatch(requestBurgers())
 })
 
-class App extends Component {
+class Menu extends Component {
 
     componentDidMount(){
         this.props.onRequestBurgers();
@@ -31,13 +31,13 @@ class App extends Component {
         const filteredBurgers = burgers.filter(burger => burger.name.toLowerCase().includes(searchField.toLowerCase()));
 
         return (isPending) ?
-            <h1 className="tc"> Loading </h1> :
+            <h1 className="tc header"> Loading </h1> :
             (
-                <div className="tc">
-                    <Scroll>
-                        <h1 className="ma0 pa4"> Our  Burgers </h1>
+                <div className="tc menu">
+                    {/* <Scroll> */}
+                        <h1 className="ma0 pa4 header"> Our  Burgers </h1>
                         <SearchBox searchChange = {onSearchChange}/>
-                    </Scroll>
+                    {/* </Scroll> */}
                     <ErrorBoundary>
                         <CardList burgers = {filteredBurgers}/>
                     </ErrorBoundary>
@@ -46,6 +46,6 @@ class App extends Component {
     }   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
 
 // json-server --watch db.json --port 3004

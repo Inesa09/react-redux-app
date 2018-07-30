@@ -1,0 +1,64 @@
+{
+    "burgers": [
+    {
+        "id": 1,
+        "name": "Delicateka",
+        "ingredients": "Leanne Graham",
+        "price": "Sincere@april.biz"
+    },
+    {
+        "id": 2,
+        "name": "Izi Burger",
+        "ingredients": "Ervin Howel",
+        "price": "Shanna@melissa.tv"
+    },
+    {
+        "id": 3,
+        "name": "Burger Joint",
+        "ingredients": "Clementine Bauch",
+        "price": "Nathan@yesenia.net"
+    },
+    {
+        "id": 4,
+        "name": "Delicateka",
+        "ingredients": "Patricia Lebsack",
+        "price": "Julianne.OConner@kory.org"
+    },
+    {
+        "id": 5,
+        "name": "Fuagra Burger",
+        "ingredients": "Chelsey Dietrich",
+        "price": "Lucio_Hettinger@annie.ca"
+    },
+    {
+        "id": 6,
+        "name": "Izi Burger",
+        "ingredients": "Mrs. Dennis Schulist",
+        "price": "Karley_Dach@jasper.info"
+    },
+    {
+        "id": 7,
+        "name": "Meet & Burger",
+        "ingredients": "Kurtis Weissnat",
+        "price": "Telly.Hoeger@billy.biz"
+    },
+    {
+        "id": 8,
+        "name": "Burger Joint",
+        "ingredients": "Nicholas Runolfsdottir V",
+        "price": "Sherwood@rosamond.me"
+    },
+    {
+        "id": 9,
+        "name": "Izi Burger",
+        "ingredients": "Glenna Reichert",
+        "price": "Chaim_McDermott@dana.io"
+    },
+    {
+        "id": 10,
+        "name": "Meet & Burger",
+        "ingredients": "Clementina DuBuque",
+        "price": "Rey.Padberg@karina.biz"
+    }
+]
+}

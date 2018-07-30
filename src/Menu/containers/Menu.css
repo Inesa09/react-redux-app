@@ -1,8 +1,8 @@
-body{
-    background: linear-gradient(to right, lightcyan, darkgray);
+.menu{
+    background: linear-gradient(to bottom, lightcyan, darkgray);
 }
 
-h1 {
+.header {
     font-family: 'Monoton';
     font-weight: 1;
     font-size: 5em;
