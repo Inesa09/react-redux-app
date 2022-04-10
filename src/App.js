@@ -12,7 +12,6 @@ class App extends Component {
             <div>
                 <Home />
                 <About />
-                <Menu />
                 <Contact />
             </div>
         )
